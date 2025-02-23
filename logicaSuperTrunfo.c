@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 int main() {
-
     // Variáveis 
     int pontos_turisticos1, pontos_turisticos2, escolhaAtributo;
     unsigned long int populacao1, populacao2;
@@ -98,8 +97,10 @@ int main() {
     printf("- Digite o atributo escolhido: ");
     scanf("%d", &escolhaAtributo);
 
+    // Comparação dos atributos escolhidos:
     switch (escolhaAtributo) {
     case 1:
+    // Nome:
         printf("\n- Este atributo é utilizado apenas para exibir informações das cartas.\n");
         printf("\n--- Cidade 1 ---\n");
         printf("> Nome da Cidade: %s\n", nome1);
@@ -107,6 +108,7 @@ int main() {
         printf("> Nome da Cidade: %s\n", nome2);
         break;
     case 2:
+    //População:
         printf("\n- Você escolheu o Atributo População!\n");
         printf("- Informações das cartas:\n");
         printf("\n<--- Cidade 1 --->\n");
@@ -125,6 +127,7 @@ int main() {
         }   
         break;
     case 3:
+    // Área:
         printf("\n- Você escolheu o Atributo Área!\n");
         printf("- Informações das cartas:\n");
         printf("\n<--- Cidade 1 --->\n");
@@ -143,6 +146,7 @@ int main() {
         }  
         break;
     case 4:
+    // PIB:
         printf("\n- Você escolheu o Atributo PIB!\n");
         printf("- Informações das cartas:\n");
         printf("\n<--- Cidade 1 --->\n");
@@ -161,6 +165,7 @@ int main() {
         }
         break;
     case 5:
+    // Pontos Turísticos:
         printf("\n- Você escolheu o Atributo Pontos Turísticos!\n");
         printf("- Informações das cartas:\n");
         printf("\n<--- Cidade 1 --->\n");
@@ -179,6 +184,7 @@ int main() {
         }
         break;
     case 6:
+    // Densidade Demográfica:
         printf("\n- Você escolheu o Atributo Densidade Demográfica!\n");
         printf("- Neste atibuto vence a carta com o menor valor.\n");
         printf("- Informações das cartas:\n");
@@ -198,6 +204,7 @@ int main() {
         }
         break;
     default:
+    // Opção Inválida:
         printf("> Atenção!! Você digitou uma opção inválida!!\n");
         break;
     }
