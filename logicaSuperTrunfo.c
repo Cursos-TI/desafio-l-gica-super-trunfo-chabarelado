@@ -2,7 +2,8 @@
 
 int main() {
     // Variáveis 
-    int pontos_turisticos1, pontos_turisticos2, escolhaAtributo;
+    int pontos_turisticos1, pontos_turisticos2, escolhaAtributo1, escolhaAtributo2;
+    int resultado1 = 0, resultado2 = 0;
     unsigned long int populacao1, populacao2;
     char estado1, estado2, codigo1[4],codigo2[4], nome1[30], nome2[30];
     float pib1, pib2, area1, area2, pib_per_capita1, pib_per_capita2, densidade1, densidade2; 
@@ -85,9 +86,9 @@ int main() {
     printf("> Densidade Populacional: %.2f pessoas/km²\n", densidade2);
     printf("> SUPER PODER: %.2f\n", Super2);
 
-    // Menu de escolha da comparação das carta:
-    printf("\n<-- Menu de Escolha -->\n");
-    printf("Agora escolha abaixo o atributo que você deseja comparar:\n");
+    // Menu de escolha do Primeiro Atributo:
+    printf("\n<-- Menu de Escolha (Primeiro Atributo)-->\n");
+    printf("Agora escolha abaixo o primeiro atributo que você deseja comparar:\n");
     printf("1. Nome da Cidade.\n");
     printf("2. População.\n");
     printf("3. Área.\n");
@@ -95,10 +96,10 @@ int main() {
     printf("5. Número de pontos turísticos\n");
     printf("6. Densidade demográica.\n");
     printf("- Digite o atributo escolhido: ");
-    scanf("%d", &escolhaAtributo);
+    scanf("%d", &escolhaAtributo1);
 
-    // Comparação dos atributos escolhidos:
-    switch (escolhaAtributo) {
+    // Comparação do Primeiro Atributo escolhido:
+    switch (escolhaAtributo1) {
     case 1:
     // Nome:
         printf("\n- Este atributo é utilizado apenas para exibir informações das cartas.\n");
@@ -118,13 +119,12 @@ int main() {
         printf("> Nome da Cidade: %s\n", nome2);
         printf("> População: %d pessoas\n", populacao2);
 
+        // Incrementa 1 ao valor do resultado 1 ou 2.
         if (populacao1 > populacao2) {
-            printf("==> A CIDADE 1 VENCEU <==\n");
-        } else if (populacao2 > populacao1){
-            printf("==> A CIDADE 2 VENCEU <==\n");
+            resultado1 ++;
         } else {
-            printf("==> EMPATE <==\n");
-        }   
+            resultado2 ++;
+        } 
         break;
     case 3:
     // Área:
@@ -137,13 +137,12 @@ int main() {
         printf("> Nome da Cidade: %s\n", nome2);
         printf("> População: %.2f km²\n", area2);
         
+        // Incrementa 1 ao valor do resultado 1 ou 2.
         if (area1 > area2) {
-            printf("==> A CIDADE 1 VENCEU <==\n");
-        } else if (area2 > area1){
-            printf("==> A CIDADE 2 VENCEU <==\n");
+            resultado1 ++;
         } else {
-            printf("==> EMPATE <==\n");
-        }  
+            resultado2 ++;
+        } 
         break;
     case 4:
     // PIB:
@@ -156,13 +155,12 @@ int main() {
         printf("> Nome da Cidade: %s\n", nome2);
         printf("> PIB: %.2f reais\n", pib2);
         
+        // Incrementa 1 ao valor do resultado 1 ou 2.
         if (pib1 > pib2) {
-            printf("==> A CIDADE 1 VENCEU <==\n");
-        } else if (pib2 > pib1){
-            printf("==> A CIDADE 2 VENCEU <==\n");
+            resultado1 ++;
         } else {
-            printf("==> EMPATE <==\n");
-        }
+            resultado2 ++;
+        } 
         break;
     case 5:
     // Pontos Turísticos:
@@ -175,13 +173,12 @@ int main() {
         printf("> Nome da Cidade: %s\n", nome2);
         printf("> Pontos Turisticos: %d\n", pontos_turisticos2);
         
+        // Incrementa 1 ao valor do resultado 1 ou 2.
         if (pontos_turisticos1 > pontos_turisticos2) {
-            printf("==> A CIDADE 1 VENCEU <==\n");
-        } else if (pontos_turisticos2 > pontos_turisticos1){
-            printf("==> A CIDADE 2 VENCEU <==\n");
+            resultado1 ++;
         } else {
-            printf("==> EMPATE <==\n");
-        }
+            resultado2 ++;
+        } 
         break;
     case 6:
     // Densidade Demográfica:
@@ -194,14 +191,13 @@ int main() {
         printf("<--- Cidade 2 --->\n");
         printf("> Nome da Cidade: %s\n", nome2);
         printf("> Densidade Populacional: %.2f pessoas/km²\n", densidade2);
-        
+
+        // Incrementa 1 ao valor do resultado 1 ou 2.
         if (densidade1 > densidade2) {
-            printf("==> A CIDADE 2 VENCEU <==\n");
-        } else if (densidade2 > densidade1){
-            printf("==> A CIDADE 1 VENCEU <==\n");
+            resultado2 ++;
         } else {
-            printf("==> EMPATE <==\n");
-        }
+            resultado1 ++;
+        } 
         break;
     default:
     // Opção Inválida:
@@ -209,6 +205,150 @@ int main() {
         break;
     }
 
+    // Menu de escolha do Segundo Atributo:
+    printf("\n<-- Menu de Escolha (Segundo Atributo) -->\n");
+    printf("Agora escolha abaixo o segundo e ultimo atributo que você deseja comparar:\n");
+    printf("OBS: Selecione um atributo diferente do anterior!!!\n");
+    printf("1. Nome da Cidade.\n");
+    printf("2. População.\n");
+    printf("3. Área.\n");
+    printf("4. PIB.\n");
+    printf("5. Número de pontos turísticos\n");
+    printf("6. Densidade demográica.\n");
+    printf("- Digite o atributo escolhido: ");
+    scanf("%d", &escolhaAtributo2);
+
+
+    if (escolhaAtributo2 == escolhaAtributo1) {
+        printf("!!! Você ja escolheu esta opção !!!\n");
+    } else {
+    // Comparação do segundo e ultimo atributo escolhido:
+        switch (escolhaAtributo2){
+        case 1: 
+    // Nome:
+            printf("\n- Este atributo é utilizado apenas para exibir informações das cartas.\n");
+            printf("\n--- Cidade 1 ---\n");
+            printf("> Nome da Cidade: %s\n", nome1);
+            printf("\n--- Cidade 2 ---\n");
+            printf("> Nome da Cidade: %s\n", nome2);
+            break;
+        case 2:
+    //População:
+            printf("\n- Você escolheu o Atributo População!\n");
+            printf("- Informações das cartas:\n");
+            printf("\n<--- Cidade 1 --->\n");
+            printf("> Nome da Cidade: %s\n", nome1);
+            printf("> População: %d pessoas\n", populacao1);
+            printf("<--- Cidade 2 --->\n");
+            printf("> Nome da Cidade: %s\n", nome2);
+            printf("> População: %d pessoas\n", populacao2);
+
+    // Incrementa 1 ao valor do resultado 1 ou 2.
+            if (populacao1 > populacao2) {
+                resultado1 ++;
+            } else {
+                resultado2 ++;
+            }
+            break;
+        case 3:
+    // Área:
+            printf("\n- Você escolheu o Atributo Área!\n");
+            printf("- Informações das cartas:\n");
+            printf("\n<--- Cidade 1 --->\n");
+            printf("> Nome da Cidade: %s\n", nome1);
+            printf("> Área: %.2f km²\n", area1);
+            printf("<--- Cidade 2 --->\n");
+            printf("> Nome da Cidade: %s\n", nome2);
+            printf("> População: %.2f km²\n", area2);
+            
+    // Incrementa 1 ao valor do resultado 1 ou 2.
+            if (area1 > area2) {
+                resultado1 ++;
+            } else {
+                resultado2 ++;
+            } 
+            break;
+        case 4:
+    // PIB:
+            printf("\n- Você escolheu o Atributo PIB!\n");
+            printf("- Informações das cartas:\n");
+            printf("\n<--- Cidade 1 --->\n");
+            printf("> Nome da Cidade: %s\n", nome1);
+            printf("> PIB: %.2f reais\n", pib1);
+            printf("<--- Cidade 2 --->\n");
+            printf("> Nome da Cidade: %s\n", nome2);
+            printf("> PIB: %.2f reais\n", pib2);
+            
+    // Incrementa 1 ao valor do resultado 1 ou 2.
+            if (pib1 > pib2) {
+                resultado1 ++;
+            } else {
+                resultado2 ++;
+            } 
+            break;
+        case 5:
+    // Pontos Turísticos:
+            printf("\n- Você escolheu o Atributo Pontos Turísticos!\n");
+            printf("- Informações das cartas:\n");
+            printf("\n<--- Cidade 1 --->\n");
+            printf("> Nome da Cidade: %s\n", nome1);
+            printf("> Pontos Turisticos: %d\n", pontos_turisticos1);
+            printf("<--- Cidade 2 --->\n");
+            printf("> Nome da Cidade: %s\n", nome2);
+            printf("> Pontos Turisticos: %d\n", pontos_turisticos2);
+            
+    // Incrementa 1 ao valor do resultado 1 ou 2.
+            if (pontos_turisticos1 > pontos_turisticos2) {
+                resultado1 ++;
+            } else {
+                resultado2 ++;
+            } 
+            break;
+        case 6:
+    // Densidade Demográfica:
+            printf("\n- Você escolheu o Atributo Densidade Demográfica!\n");
+            printf("- Neste atibuto vence a carta com o menor valor.\n");
+            printf("- Informações das cartas:\n");
+            printf("\n<--- Cidade 1 --->\n");
+            printf("> Nome da Cidade: %s\n", nome1);
+            printf("> Densidade Populacional: %.2f pessoas/km²\n", densidade1);
+            printf("<--- Cidade 2 --->\n");
+            printf("> Nome da Cidade: %s\n", nome2);
+            printf("> Densidade Populacional: %.2f pessoas/km²\n", densidade2);
+
+    // Incrementa 1 ao valor do resultado 1 ou 2.
+            if (densidade1 > densidade2) {
+                resultado2 ++;
+            } else {
+                resultado1 ++;
+            } 
+            break;       
+        default:
+            printf("> Atenção!! Você digitou uma opção inválida!!\n");
+            break;
+        }
+    }    
+
+    if (resultado1 == resultado2) {
+        printf("\n!!! EMPATE!!!\n");
+        printf("Ambas as cartas venceram em pelo menos um atributo!!!\n");
+    } else if (resultado1 > resultado2){
+        printf("\n!!! CARTA 1 VENCEU !!!\n");
+        printf("A carta tem pelo menos 1 atributo a mais que a carta 2!!!\n");
+    } else {
+        printf("\n!!! CARTA 2 VENCEU !!!!\n");
+        printf("A carta tem pelo menos 1 atributo a mais que a carta 1!!!\n");
+    }
     return 0;
 }
 
+/*
+Considerações finais:
+
+Foi possível concluir a atividade utilizando todo o conteúdo mostrado durante as aulas, ainda sim eu tenho ciência que o código poderia
+ter sido mais bem estruturado utilizando funções e programa mais dinâmico utilizando os laços de repetição que permitiriam jogar mais
+de uma vez e junto com as funções, tornar o código mais simples.
+
+Espero ter conseguido entregar e executar a atividade de maneira correta, dês de já agradeço pela correção da atividade.
+
+*/
